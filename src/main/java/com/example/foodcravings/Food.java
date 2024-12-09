@@ -3,25 +3,22 @@ package com.example.foodcravings;
 import java.sql.*;
 import java.sql.Connection;
 
-import static javax.management.remote.JMXConnectorFactory.connect;
-
 public class Food {
-    private ResultSet rs;
-    private Connection connection;
+    private static ResultSet rs;
+    private static Connection connection;
 
-    public void selectFood(String sql) {
+    public static String selectFood(String sql) {
+        String printFood = "";
         try {
             connection = SetConnection.connect();
             Statement statement = connection.createStatement();
             rs = statement.executeQuery(sql);
             while (rs.next()) {
-                System.out.println("EventID: " + rs.getInt("eventID") + "\t" +
-                        "EventTitle: " + rs.getString("eventTitle") + "\t" +
-                        "Price: " + rs.getString("eventPrice") + "\t" +
-                        "CategoryID: " + rs.getString("eventCategoryID") + "\t" +
-                        "Favourite: " + rs.getInt("eventFavourite"));
+                printFood = ("MatID: " + rs.getInt("matID") + "\t" +
+                        "Mat: " + rs.getString("matNamn") + "\t" +
+                        "Favorit: " + rs.getInt("matFavorit") + "\t" +
+                        "Kategori: " + rs.getInt("matKategoriID"));
             }
-
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         } finally {
@@ -33,6 +30,7 @@ public class Food {
                 System.out.println("Error closing resources: " + e.getMessage());
             }
         }
+        return printFood;
     }
 }
 

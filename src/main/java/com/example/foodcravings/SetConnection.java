@@ -11,9 +11,13 @@ public class SetConnection {
 
     public static Connection connect() {
         try {
+            // Load the SQLite JDBC driver
+            Class.forName("org.sqlite.JDBC");
             conn = DriverManager.getConnection(url);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
         return conn;
     }

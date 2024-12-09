@@ -1,5 +1,6 @@
 package com.example.foodcravings.controller;
 
+import com.example.foodcravings.Food;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -13,7 +14,8 @@ public class HelloController {
 
     @FXML
     protected void onButtonOneClick() {
-        buttonOne.setText("Welcome to JavaFX Application!");
+        buttonOne.setText(Food.selectFood("SELECT * FROM mat"));
+
     }
 
 
