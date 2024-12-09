@@ -6,13 +6,12 @@
 
 <?import javafx.scene.control.Button?>
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.foodcravings.controller.HelloController">
+      fx:controller="com.example.foodcravings.controller.HelloController" stylesheets="@css/styles.css">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
-
+    <Button styleClass="shared-button" alignment="TOP_CENTER" text="Mat" onAction="#onButtonOneClick"/>
+    <Button styleClass="shared-button" alignment="TOP_CENTER" text="Favoriter" onAction="#onButtonTwoClick"/>
     <Label fx:id="buttonOne"/>
     <Label fx:id="buttonTwo"/>
-    <Button text="Mat" onAction="#onButtonOneClick"/>
-    <Button text ="Favoriter" onAction="#onButtonTwoClick"/>
 </VBox>

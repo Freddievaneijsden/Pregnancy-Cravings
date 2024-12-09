@@ -1,0 +1,37 @@
+.root {
+    -fx-background-color: #F5F5DC; /* Light beige */
+}
+
+.label {
+    -fx-font-size: 20px;
+    -fx-text-fill: grey;
+    -fx-font-weight: 400;
+    -fx-background-color: #F5F5DC;
+    -fx-padding: 10px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.label:hover {
+    -fx-background-color: #FF4500;
+}
+
+.shared-button {
+    -fx-min-width: 100px; /* Minimum width */
+    -fx-min-height: 50px; /* Minimum height */
+    -fx-pref-width: 100px; /* Preferred width */
+    -fx-pref-height: 50px; /* Preferred height */
+    -fx-max-width: 100px; /* Maximum width */
+    -fx-max-height: 50px; /* Maximum height */
+    -fx-background-color: #FFA500; /* Orange */
+    -fx-text-fill: grey; /* White text */
+    -fx-font-size: 20px;
+    -fx-font-weight: 400;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 10;
+}
+
+.button:hover {
+    -fx-background-color: #FF4500; /* Darker orange for hover */
+}

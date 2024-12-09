@@ -2,22 +2,22 @@ package com.example.foodcravings;
 
 import java.sql.*;
 import java.sql.Connection;
+import java.util.List;
 
 public class Food {
     private static ResultSet rs;
     private static Connection connection;
 
-    public static String selectFood(String sql) {
-        String printFood = "";
+    public static List<String> selectFood(String sql) {
+        List<String> listOfFood = new java.util.ArrayList<>(List.of());
         try {
             connection = SetConnection.connect();
             Statement statement = connection.createStatement();
             rs = statement.executeQuery(sql);
             while (rs.next()) {
-                printFood = ("MatID: " + rs.getInt("matID") + "\t" +
-                        "Mat: " + rs.getString("matNamn") + "\t" +
-                        "Favorit: " + rs.getInt("matFavorit") + "\t" +
-                        "Kategori: " + rs.getInt("matKategoriID"));
+                listOfFood.add((rs.getString("matNamn") + "\t"));
+//                        "Favorit: " + rs.getInt("matFavorit") + "\t" +
+//                        "Kategori: " + rs.getInt("matKategoriID")));
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -30,7 +30,7 @@ public class Food {
                 System.out.println("Error closing resources: " + e.getMessage());
             }
         }
-        return printFood;
+        return listOfFood;
     }
 }
 
