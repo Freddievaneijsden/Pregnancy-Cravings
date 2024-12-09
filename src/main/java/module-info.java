@@ -1,6 +1,8 @@
 module com.example.foodcravings {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
+    requires java.management;
 
 
     opens com.example.foodcravings to javafx.fxml;
