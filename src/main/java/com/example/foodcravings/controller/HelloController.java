@@ -11,6 +11,11 @@ public class HelloController {
     @FXML
     private Label buttonOne;
 
+    //En knapp för favoriter och en för icke favoriter
+    //Inga siffror, hjärtan på favoriter
+    //Mums och bläh
+    //Bild på amanda som bakgrund
+
     @FXML
     private Label buttonTwo;
 
