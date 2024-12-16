@@ -1,23 +1,27 @@
-package com.example.foodcravings;
+package com.example.foodcravings.model;
 
-import java.sql.*;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
-public class Food {
+import static com.example.foodcravings.SetConnection.connect;
+
+public class DislikedFood {
     private static ResultSet rs;
     private static Connection connection;
 
-    public static List<String> selectFood(String sql) {
-        List<String> listOfFood = new java.util.ArrayList<>(List.of());
+    public static List<String> selectDislikedFood() {
+
+        String sql = "SELECT * FROM mat WHERE matOgillar = 1";
+        List<String> listOfDisliked = new java.util.ArrayList<>(List.of());
         try {
-            connection = SetConnection.connect();
+            connection = connect();
             Statement statement = connection.createStatement();
             rs = statement.executeQuery(sql);
             while (rs.next()) {
-                listOfFood.add((rs.getString("matNamn") + "\t"));
-//                        "Favorit: " + rs.getInt("matFavorit") + "\t" +
-//                        "Kategori: " + rs.getInt("matKategoriID")));
+                listOfDisliked.add((rs.getString("matNamn") + "\t"));
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -30,8 +34,6 @@ public class Food {
                 System.out.println("Error closing resources: " + e.getMessage());
             }
         }
-        return listOfFood;
+        return listOfDisliked;
     }
 }
-
-

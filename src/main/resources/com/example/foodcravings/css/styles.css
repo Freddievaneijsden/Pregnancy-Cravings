@@ -1,37 +1,64 @@
-.root {
-    -fx-background-color: #F5F5DC; /* Light beige */
-}
-
 .label {
     -fx-font-size: 20px;
-    -fx-text-fill: grey;
     -fx-font-weight: 400;
-    -fx-background-color: #F5F5DC;
-    -fx-padding: 10px;
-    -fx-border-radius: 5px;
-    -fx-background-radius: 5px;
+    -fx-text-fill: #4B4B4B; /* Neutral grey for text */
+    -fx-padding: 10px 15px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-background-color: #FFA07A;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0.5, 0, 0); /* Subtle shadow */
 }
 
 .label:hover {
-    -fx-background-color: #FF4500;
+    -fx-background-color: #FF6347; /* Brighter hover effect */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0.5, 0, 0);
+    -fx-text-fill: black;
 }
 
 .shared-button {
-    -fx-min-width: 100px; /* Minimum width */
-    -fx-min-height: 50px; /* Minimum height */
-    -fx-pref-width: 100px; /* Preferred width */
-    -fx-pref-height: 50px; /* Preferred height */
-    -fx-max-width: 100px; /* Maximum width */
-    -fx-max-height: 50px; /* Maximum height */
-    -fx-background-color: #FFA500; /* Orange */
-    -fx-text-fill: grey; /* White text */
-    -fx-font-size: 20px;
-    -fx-font-weight: 400;
-    -fx-border-radius: 5;
-    -fx-background-radius: 5;
+    -fx-min-width: 120px; /* Slightly larger buttons */
+    -fx-min-height: 50px;
+    -fx-pref-width: 120px;
+    -fx-pref-height: 50px;
+    -fx-background-color: #FFA07A; /* Softer orange */
+    -fx-text-fill: #4B4B4B;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
     -fx-padding: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8, 0.5, 0, 0); /* Shadow for depth */
 }
 
-.button:hover {
-    -fx-background-color: #FF4500; /* Darker orange for hover */
+.shared-button:hover {
+    -fx-background-color: #FF6347; /* Brighter hover effect */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0.5, 0, 0);
+    -fx-cursor: hand; /* Pointer cursor for hover */
+    -fx-text-fill: black;
+
 }
+
+.shared-button:pressed {
+    -fx-background-color: #FF4500; /* Slightly darker when pressed */
+    -fx-effect: none; /* Remove shadow on press for realism */
+}
+
+.list-view {
+    -fx-font-size: 14px;
+    -fx-font-weight: 100;
+    -fx-pref-height: 300;
+    -fx-pref-width: 300;
+    -fx-text-fill: #4B4B4B; /* Neutral grey for text */
+    -fx-padding: 10px 15px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-background-color: #FFA07A;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0.5, 0, 0); /* Subtle shadow */
+}
+
+.list-view:hover {
+    -fx-background-color: #FF6347; /* Brighter hover effect */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0.5, 0, 0);
+    -fx-text-fill: black;
+}
+
